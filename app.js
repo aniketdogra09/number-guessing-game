@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         }
         else{
             displayMessage(`You guessed it right!`);
+            endGame();
         }
 
     }
@@ -90,16 +91,16 @@ document.addEventListener('DOMContentLoaded',()=>{
     //end_game : to end the current game
     function endGame(){
 
-        playGame=false;
-
-        userInput='';
+        userInput.value='';
         userInput.setAttribute('disabled','');
 
         p.classList.add('button');
-        p.innerText=`<h3 id="newGame">Start New Game</h3>`;
+        p.innerHTML=`<h3 id="newGame">Start New Game</h3>`;
         startOver.appendChild(p);
 
         newGame();
+
+        playGame=false;
 
     }
 
@@ -115,6 +116,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             numGuess=1;
             guessSlot.innerHTML='';
             remaining.innerHTML=`${11-numGuess}`;
+            lowOrHi.innerHTML='';
             userInput.removeAttribute('disabled');
             startOver.removeChild(p);
             playGame=true;
