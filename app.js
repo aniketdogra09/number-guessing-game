@@ -93,9 +93,10 @@ document.addEventListener('DOMContentLoaded',()=>{
 
         userInput.value='';
         userInput.setAttribute('disabled','');
+        submitButton.setAttribute('disabled','');
 
         p.classList.add('button');
-        p.innerHTML=`<h3 id="newGame">Start New Game</h3>`;
+        p.innerHTML=`<span id="newGame" class="new-game-button"><b>Start New Game</b></span>`;
         startOver.appendChild(p);
 
         newGame();
